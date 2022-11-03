@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --hot --open --port 3000",
-    "build": "webpack --mode production",
+    "start-dev": "webpack-dev-server --mode development --hot --open --port 3000",
+    "build-dev": "webpack --mode production",
+    "start": "node server.js",
+    "build": "webpack --config ./webpack.config.js --mode='production'",
+    "dev-test": "webpack-dev-server",
     "update-nvm": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash"
   },
   "keywords": [],
@@ -14,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "css-loader": "^6.7.1",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^3.3.1"
