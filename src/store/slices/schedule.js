@@ -1,13 +1,14 @@
 // third-party
-import { createSlice } from '@reduxjs/toolkit';
+import {
+	createSlice
+} from '@reduxjs/toolkit';
 
 // ----------------------------------------------------------------------
-
 const initialState = {
 	schedule: [],
 	isLoading: false,
 	hasError: false,
-	errorMsg: '',
+	errorMsg: ''
 };
 
 const schedule = createSlice({
@@ -16,24 +17,42 @@ const schedule = createSlice({
 	reducers: {
 		// HAS ERROR
 		setHasError(state, action) {
-			state.hasError = action.payload;
+			// state.hasError = false;
+			// state.hasError = action.payload;
+			return {
+				...state,
+				hasError: action.payload
+			};
 		},
 		setErrorMsg(state, action) {
-			state.errorMsg = action.payload;
+			return {
+				...state,
+				errorMsg: action.payload
+			};
 		},
 		// SET SCHEDULE
 		setSchedule(state, action) {
-			state.schedule = action.payload;
+			// state.schedule = action.payload;
+			return {
+				...state,
+				schedule: action.payload
+			};
 		},
 		// SET LOADING
 		setLoading(state, action) {
-			state.isLoading = action.payload;
+			return {
+				...state,
+				isLoading: action.payload
+			};
 		},
-		resetSchedule(state, action) {
-			state.schedule = [];
-			state.isLoading = false;
-		},
-	},
+		resetSchedule(state) {
+			return {
+				...state,
+				schedule: [],
+				isLoading: false
+			};
+		}
+	}
 });
 
 // Reducer
@@ -43,7 +62,7 @@ export const {
 	setSchedule,
 	setErrorMsg,
 	setLoading,
-	resetSchedule,
+	resetSchedule
 } = schedule.actions;
 
 // ----------------------------------------------------------------------

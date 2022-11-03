@@ -14,7 +14,6 @@ function App() {
 			calledFrom: 'widget',
 		};
 		const url = `${baseURL}/widget/get-schedule`;
-		console.log(`url: ${url}`);
 		const getSchedule = async () => {
 			await axios
 				.post(url, bodytosend)
