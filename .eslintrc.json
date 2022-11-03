@@ -4,10 +4,11 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
         "airbnb",
+        "plugin:react/recommended",
         "plugin:prettier/recommended"
     ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -27,7 +28,8 @@
         "no-console": "off",
         "linebreak-style": 0,
         "prettier/prettier": ["error", {
-            "endOfLine": "auto"
+            "endOfLine": "auto",
+            "htmlWhitespaceSensitivity": "ignore"
         }, {
             "usePrettierrc": true
         }]
