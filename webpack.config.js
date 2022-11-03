@@ -21,7 +21,16 @@ module.exports = {
         new Dotenv({
             systemvars: true
         }),
-        new FaviconsWebpackPlugin('public/favicon.ico'),
+        new FaviconsWebpackPlugin('public/favicon.ico', {
+            'icons': {
+                android: false,
+                appleIcon: false,
+                appleStartup: false,
+                favicons: true,
+                windows: false,
+                yandex: false
+            }
+        }),
         new MiniCssExtractPlugin()
     ],
     module: {
