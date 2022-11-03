@@ -1,11 +1,6 @@
 // third-party
 import { createSlice } from '@reduxjs/toolkit';
 
-// project imports
-// import axios from 'axios';
-// import { dispatch } from '../index';
-// import { useDispatch } from 'react-redux';
-
 // ----------------------------------------------------------------------
 
 const initialState = {
