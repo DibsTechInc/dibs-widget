@@ -21,11 +21,11 @@ module.exports = {
         new Dotenv({
             systemvars: true
         }),
-        new FaviconsWebpackPlugin('public/favicon.ico')
+        new FaviconsWebpackPlugin('public/favicon.ico'),
+        new MiniCssExtractPlugin()
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
