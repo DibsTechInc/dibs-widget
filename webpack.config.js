@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
@@ -17,6 +18,7 @@ module.exports = {
 		new Dotenv({
 			systemvars: true,
 		}),
+		new FaviconsWebpackPlugin('public/favicon.ico'),
 	],
 	module: {
 		rules: [
@@ -31,5 +33,8 @@ module.exports = {
 				},
 			},
 		],
+	},
+	resolve: {
+		preferRelative: true,
 	},
 };
