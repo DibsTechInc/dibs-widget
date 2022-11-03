@@ -1,6 +1,11 @@
 const path = require('path');
 const express = require('express');
 
+if (process.env.NODE_ENV !== 'production') {
+	// eslint-disable-next-line global-require
+	require('dotenv').config();
+}
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'build')));
