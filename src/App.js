@@ -3,6 +3,8 @@ import axios from 'axios';
 import { dispatch } from 'store';
 import { setSchedule } from 'store/slices/schedule';
 
+import './App.css';
+
 function App() {
 	const baseURL = process.env.REACT_APP_BASE_URL;
 	React.useEffect(() => {
@@ -25,7 +27,7 @@ function App() {
 		};
 		getSchedule();
 	}, []);
-	return <div>Dibs Widget - Base Route</div>;
+	return <div className='App'>Dibs Widget - Base Route</div>;
 }
 
 export default App;
