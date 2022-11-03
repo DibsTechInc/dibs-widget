@@ -8,13 +8,18 @@ function App() {
 		const bodytosend = {
 			dibsStudioId: 218,
 			timeZone: 'America/New_York',
+			calledFrom: 'widget',
 		};
 		const url = `${baseURL}/widget/get-schedule`;
+		console.log(`url: ${url}`);
 		const getSchedule = async () => {
 			await axios
 				.post(url, bodytosend)
 				.then((response) => {
-					console.log(JSON.stringify(response.data, null, 2));
+					console.log(JSON.stringify(response, null, 2));
+					console.log(
+						`length of response is: ${response.data.length}`
+					);
 				})
 				.catch((error) => {
 					console.log(error);
