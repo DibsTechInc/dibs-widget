@@ -6,10 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 require('dotenv').config()
 
-const devMode = process.env.NODE_ENV !== 'production'
+// const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-    mode: devMode,
+    mode: production,
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',

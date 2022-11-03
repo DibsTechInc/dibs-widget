@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-require('dotenv').config()
+// require('dotenv').config()
 
 const devMode = process.env.NODE_ENV !== 'production'
 

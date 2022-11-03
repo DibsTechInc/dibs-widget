@@ -10,9 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "webpack-dev-server --mode development --hot --open --port 3000",
-    "build-dev": "webpack --config ./webpack.config.js --mode development",
+    "build-dev": "webpack --config ./webpack.config.dev.js --mode development",
     "start": "node server.js",
-    "build": "webpack --config ./webpack.config.js --mode='production'",
+    "build": "webpack --config ./webpack.config.prod.js --mode='production'",
     "dev-test": "webpack-dev-server",
     "update-nvm": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash"
   },
