@@ -9,7 +9,7 @@ require('dotenv').config()
 // const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-    mode: production,
+    mode: 'production',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
