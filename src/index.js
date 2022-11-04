@@ -10,16 +10,14 @@ import {
 	RouterProvider
 } from 'react-router-dom';
 
-import router from './routes/index';
+// import router from './routes/index';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
 	<React.StrictMode>
 		<Provider store={store}>
-			<RouterProvider router={router}>
-				<App />
-			</RouterProvider>
+			<App />
 		</Provider>
 	</React.StrictMode>
 );
