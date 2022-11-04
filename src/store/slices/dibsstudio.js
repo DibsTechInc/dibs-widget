@@ -1,10 +1,7 @@
 // third-party
-import { createSlice } from '@reduxjs/toolkit';
-
-// project imports
-// import axios from 'axios';
-// import { dispatch } from '../index';
-// import { useDispatch } from 'react-redux';
+import {
+	createSlice
+} from '@reduxjs/toolkit';
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +9,7 @@ const initialState = {
 	config: {
 		dibsStudioId: 0,
 		studioName: '',
-		timeZone: 'America/New_York',
+		timeZone: 'America/New_York'
 	},
 	studioConfig: {
 		terms: '',
@@ -28,7 +25,7 @@ const initialState = {
 		vod_access_period: '',
 		imageUrls: {
 			color_logo: '',
-			hero_url: '',
+			hero_url: ''
 		},
 		hasMemberships: true,
 		salesTax: 0,
@@ -39,28 +36,28 @@ const initialState = {
 			stripe_cardid: '',
 			subscription_fee: '',
 			total_monthly_charge: '',
-			date_of_charge: '',
-		},
+			date_of_charge: ''
+		}
 	},
 	customerService: {
 		customerServiceEmail: '',
 		customerServicePhone: '',
 		customEmailToSendFrom: '',
-		address: '',
+		address: ''
 	},
 	settings: {
 		dynamicPricing: false,
 		flashCredits: false,
 		minPrice: 20,
 		maxPrice: 30,
-		showChatbot: false,
+		showChatbot: false
 	},
 	integrations: {
 		classpass: false,
 		gymPass: false,
 		cp_amount: 0,
-		oldstudioid: 0,
-	},
+		oldstudioid: 0
+	}
 };
 
 const dibsstudio = createSlice({
@@ -69,101 +66,31 @@ const dibsstudio = createSlice({
 	reducers: {
 		// HAS ERROR
 		hasError(state, action) {
-			state.error = action.payload;
+			return {
+				...state,
+				error: action.payload
+			};
 		},
 		// ADD STUDIO DATA
 		addStudioData(state, action) {
-			state.config = action.payload;
+			return {
+				...state,
+				config: action.payload
+			};
 		},
 		setDibsStudioId(state, action) {
-			state.config.dibsStudioId = action.payload;
+			return {
+				...state.config,
+				dibsStudioId: action.payload
+			};
 		},
 		setStudioName(state, action) {
-			state.config.studioName = action.payload;
-		},
-		setClasspass(state, action) {
-			state.integrations.classpass = action.payload;
-		},
-		setDynamicPricing(state, action) {
-			state.settings.dynamicPricing = action.payload;
-		},
-		setShowChatbot(state, action) {
-			state.settings.showChatbot = action.payload;
-		},
-		setFlashCreditsStore(state, action) {
-			state.settings.flashCredits = action.payload;
-		},
-		setGympass(state, action) {
-			state.integrations.gympass = action.payload;
-		},
-		setGlobalPrices(state, action) {
-			state.settings.minPrice = action.payload.minPrice;
-			state.settings.maxPrice = action.payload.maxPrice;
-		},
-		setStudioProfileAccountInfo(state, action) {
-			state.config.firstName = action.payload.firstName;
-			state.config.lastName = action.payload.lastName;
-			state.config.email = action.payload.email;
-			state.config.phone = action.payload.phone;
-		},
-		setPaymentInfo(state, action) {
-			state.studioConfig.billing = action.payload;
-		},
-		setStudioTerms(state, action) {
-			state.studioConfig.terms = action.payload;
-		},
-		setGeneralLocationData(state, action) {
-			state.customerService.customerServiceEmail =
-				action.payload.serviceEmail;
-			state.customerService.customerServicePhone =
-				action.payload.servicePhone;
-			state.customerService.address = action.payload.address;
-			state.customerService.address2 = action.payload.address2;
-			state.customerService.city = action.payload.city;
-			state.customerService.state = action.payload.state;
-			state.customerService.zipcode = action.payload.zipcode;
-			state.studioConfig.salesTax = action.payload.salesTax;
-			state.studioConfig.retailTax = action.payload.retailTax;
-		},
-		setCustomEmailToSendFrom(state, action) {
-			state.customerService.customEmailToSendFrom = action.payload;
-		},
-		setTaxesRedux(state, action) {
-			state.studioConfig.salesTax = action.payload.salesTax;
-			state.studioConfig.retailTax = action.payload.retailTax;
-		},
-		setNumDaysToShowCalendar(state, action) {
-			state.studioConfig.intervalEnd = action.payload;
-		},
-		setRafAwardRedux(state, action) {
-			state.studioConfig.raf_award = action.payload;
-		},
-		setStudioConfigData(state, action) {
-			state.studioConfig = action.payload;
-		},
-		setStudioImageUrls(state, action) {
-			state.studioConfig.imageUrls = action.payload;
-		},
-		setStudioCancelTime(state, action) {
-			state.studioConfig.cancelTime = action.payload;
-		},
-		setStudioTimeZone(state, action) {
-			state.config.timeZone = action.payload;
-		},
-		setStudioColorRedux(state, action) {
-			state.studioConfig.color = action.payload;
-		},
-		setFirstClassFixedPrice(state, action) {
-			state.studioConfig.first_class_fixed_price = action.payload;
-		},
-		resetDibsStudioData(state, action) {
-			state.config.dibsStudioId = 0;
-			state.config.studioName = '';
-			state.studioConfig = {};
-			state.customerService = {};
-			state.settings = {};
-		},
-	},
+			return {
+				...state.config,
+				studioName: action.payload
+			};
+		}
+	}
 });
 
 // Reducer
@@ -193,7 +120,7 @@ export const {
 	setStudioTimeZone,
 	resetDibsStudioData,
 	setDibsStudioId,
-	setStudioName,
+	setStudioName
 } = dibsstudio.actions;
 
 // ----------------------------------------------------------------------

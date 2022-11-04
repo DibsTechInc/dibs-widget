@@ -5,21 +5,18 @@ import storage from 'redux-persist/lib/storage';
 
 // project imports
 import dibsstudioReducer from './slices/dibsstudio';
+import scheduleReducer from './slices/schedule';
 
 // ==============================|| COMBINE REDUCER ||============================== //
 
 const reducer = combineReducers({
 	// dibsstduio: persistReducer({ key: 'id', storage }, dibsstudioReducer),
 	// dibsstudio: dibsstudioReducer,
-	// thisuser: persistReducer(
-	// 	{ key: 'thisuser', storage, keyPrefix: 'thisuser-' },
-	// 	thisuserReducer
-	// ),
-	// thisuser: thisuserReducer,
 	dibsstudio: persistReducer(
 		{ key: 'dibsstudio', storage, keyPrefix: 'dibsstudio-' },
 		dibsstudioReducer
 	),
+	schedule: scheduleReducer,
 });
 
 export default reducer;

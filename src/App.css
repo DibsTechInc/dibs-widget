@@ -1,4 +1,7 @@
-.heading__one {
-    color: red;
-    background-color: skyblue;
-}
+
+.App {
+    text-align: center;
+    font-size: calc(10px + 1vmin);
+    font-family: 'Roboto', sans-serif;
+    color: #4b4949;
+  }
